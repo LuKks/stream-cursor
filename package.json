@@ -1,0 +1,19 @@
+{
+  "name": "stream-cursor",
+  "version": "1.0.0",
+  "description": "Rewrite on the same log line",
+  "main": "index.js",
+  "dependencies": {
+    "count-break-lines": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuKks/stream-cursor.git"
+  },
+  "author": "Lucas Barrena (@LuKks)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LuKks/stream-cursor/issues"
+  },
+  "homepage": "https://github.com/LuKks/stream-cursor"
+}
