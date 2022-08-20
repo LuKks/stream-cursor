@@ -2,7 +2,7 @@ const countBreakLines = require('count-break-lines')
 
 module.exports = function streamCursor (stream) {
   const updating = stream.isTTY
-  let breakLines = 0
+  let totalLines = 0
 
   cursor.clear = clear
   cursor.end = end
@@ -11,28 +11,28 @@ module.exports = function streamCursor (stream) {
   function cursor (...args) {
     clear()
     const data = args.join(' ')
-    breakLines = countBreakLines(data, stream.columns)
+    totalLines = 1 + countBreakLines(data, stream.columns)
     stream.write(data + '\n')
   }
 
   function clear () {
     if (!updating) return
-    if (!breakLines) return
+    if (!totalLines) return
 
     stream.cursorTo(0)
 
-    for (let i = 0; i < breakLines; i++) {
+    for (let i = 0; i < totalLines; i++) {
       stream.moveCursor(0, -1)
       stream.clearLine(1)
     }
 
-    breakLines = 0
+    totalLines = 0
   }
 
   function end (...args) {
     clear()
     const data = args.join(' ')
-    breakLines = 0
+    totalLines = 0
     stream.write(data + '\n')
   }
 }

@@ -4,7 +4,7 @@
   "description": "Rewrite on the same log line",
   "main": "index.js",
   "dependencies": {
-    "count-break-lines": "^1.0.0"
+    "count-break-lines": "^1.0.1"
   },
   "repository": {
     "type": "git",
