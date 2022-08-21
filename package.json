@@ -1,6 +1,6 @@
 {
   "name": "stream-cursor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Rewrite on the same log line",
   "main": "index.js",
   "dependencies": {
