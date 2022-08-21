@@ -6,6 +6,8 @@ Rewrite on the same log line.
 npm i stream-cursor
 ```
 
+![Peek 2022-08-21 16-07](https://user-images.githubusercontent.com/12686176/185806996-71dd1e99-8677-4634-bf7e-d28b89154417.gif)
+
 ## Usage
 ```javascript
 const streamCursor = require('stream-cursor')
@@ -24,8 +26,6 @@ setTimeout(() => {
     setInterval(() => cursor(Date.now()), 10)
 }, 7000)
 ```
-
-![Peek 2022-08-21 16-07](https://user-images.githubusercontent.com/12686176/185806996-71dd1e99-8677-4634-bf7e-d28b89154417.gif)
 
 ## License
 MIT
