@@ -8,9 +8,9 @@ module.exports = function streamCursor (stream) {
   cursor.end = end
   return cursor
 
-  function cursor (...args) {
+  function cursor (data = '') {
+    data = data.toString()
     clear()
-    const data = args.join(' ')
     totalLines = 1 + countBreakLines(data, stream.columns)
     stream.write(data + '\n')
   }
@@ -29,9 +29,9 @@ module.exports = function streamCursor (stream) {
     totalLines = 0
   }
 
-  function end (...args) {
+  function end (data = '') {
+    data = data.toString()
     clear()
-    const data = args.join(' ')
     totalLines = 0
     stream.write(data + '\n')
   }
